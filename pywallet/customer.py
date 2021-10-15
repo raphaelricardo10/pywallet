@@ -1,6 +1,19 @@
 class Customer:
     def __init__(self, cpf: str) -> None:
-        self.cpf = cpf
+            self.cpf = cpf
+
+    @property
+    def cpf(self):
+        return self._cpf
+
+    @cpf.setter
+    def cpf(self, value):
+        try:
+            Customer.validateCpf(value)
+        except:
+            raise
+
+        self._cpf = value
 
     def validateCpf(cpf) -> None:
         #Get all digits from CPF string
