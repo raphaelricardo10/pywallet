@@ -9,4 +9,8 @@ class TestCashbackMethods(unittest.TestCase):
 
     def test_negative_percent(self):
         with self.assertRaises(ValueError):
-            result = calculateCashback(150, -5)
+            calculateCashback(150, -5)
+
+    def test_negative_value(self):
+        with self.assertRaises(ValueError):
+            calculateCashback(-150, 5)
