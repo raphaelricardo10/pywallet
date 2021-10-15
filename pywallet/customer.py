@@ -1,7 +1,16 @@
 class Customer:
+
     def __init__(self, name: str, cpf: str) -> None:
         self.name = name
         self.cpf = cpf
+
+    class Error(Exception):
+        """Base class for errors"""
+        pass
+
+    class InvalidCpfError(Error):
+        """Raised when the input CPF is invalid"""
+        pass
 
     @property
     def cpf(self):
@@ -16,24 +25,24 @@ class Customer:
 
         self._cpf = value
 
-    def validateCpf(cpf) -> None:
+    def validateCpf(cpf: str) -> None:
         #Get all digits from CPF string
         numbers = [int(char) for char in cpf if char.isdigit()]
 
         #Check if there are 11 digits
         if len(numbers) != 11:
-            raise ValueError("The informed CPF is invalid")
+            raise Customer.InvalidCpfError
 
         """
         Check if all the numbers are the same
         This is a valid CPF with this algorithm, but it is not used
         """
         if numbers == numbers[::-1]:
-            raise ValueError("The informed CPF is invalid")
+            raise Customer.InvalidCpfError
 
         #Validate both cpf digits
         for i in range(9, 11):
             value = sum((numbers[num] * ((i+1) - num) for num in range(0, i)))
             digit = ((value * 10) % 11) % 10
             if digit != numbers[i]:
-                raise ValueError("The informed CPF is invalid")
+                raise Customer.InvalidCpfError
