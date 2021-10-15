@@ -7,6 +7,6 @@ class TestCustomerValidationMethods(unittest.TestCase):
         with self.assertRaises(Customer.InvalidCpfError):
             Customer.validateCpf("12312312365")
 
-    def test_class_initialization(self):
+    def test_constructor_validation(self):
         with self.assertRaises(Customer.InvalidCpfError):
             Customer("Raphael Ricardo", "12312312365")
