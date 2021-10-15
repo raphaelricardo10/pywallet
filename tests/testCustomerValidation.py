@@ -9,4 +9,4 @@ class TestCustomerValidationMethods(unittest.TestCase):
 
     def test_class_initialization(self):
         with self.assertRaises(ValueError):
-            Customer("12312312365")
+            Customer("Raphael Ricardo", "12312312365")

@@ -1,5 +1,6 @@
 class Customer:
-    def __init__(self, cpf: str) -> None:
+    def __init__(self, name: str, cpf: str) -> None:
+        self.name = name
         self.cpf = cpf
 
     @property
