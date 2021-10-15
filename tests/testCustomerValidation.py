@@ -1,7 +1,8 @@
 import unittest
+from pywallet.customer import Customer
 
 class TestCustomerValidationMethods(unittest.TestCase):
 
     def test_cpf_validation(self):
-        res = validateCPF(16149113710)
-        self.assertTrue(res)
+        with self.assertRaises(ValueError):
+            Customer.validateCpf("16149113710")
