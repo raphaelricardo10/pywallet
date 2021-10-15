@@ -1,6 +1,6 @@
 class Customer:
     def __init__(self, cpf: str) -> None:
-            self.cpf = cpf
+        self.cpf = cpf
 
     @property
     def cpf(self):
