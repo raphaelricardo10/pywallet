@@ -23,7 +23,6 @@ class Order:
             self._sold_at = datetime.strptime(value, "%Y-%m-%d %H:%M:%S")
         except ValueError:
             raise
-            
 
     class Item:
         def __init__(self, product: Product, qty: int) -> None:
