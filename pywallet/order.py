@@ -3,9 +3,9 @@ from pywallet.product import Product
 from pywallet.customer import Customer
 
 class Order:
-    def __init__(self, customer: Customer, date: datetime) -> None:
+    def __init__(self, customer: Customer, sold_at: datetime) -> None:
         self.customer = customer
-        self.date = date
+        self.sold_at = sold_at
         self.items = []
         self._total = 0
 

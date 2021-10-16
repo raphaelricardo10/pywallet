@@ -8,8 +8,8 @@ class TestOrderValidationMethods(unittest.TestCase):
     
     def test_total_order_ok(self):
         customer = Customer("Raphael", "16149113710")
-        date = datetime(2026, 1, 2)
-        order = Order(customer, date)
+        sold_at = datetime(2026, 1, 2)
+        order = Order(customer, sold_at)
         order.addItem(Product("A", 10), 2)
         order.addItem(Product("B", 30), 3)
         
@@ -17,12 +17,12 @@ class TestOrderValidationMethods(unittest.TestCase):
 
     def test_reassign_total(self):
         customer = Customer("Raphael", "16149113710")
-        date = datetime(2026, 1, 2)
-        order = Order(customer, date)
+        sold_at = datetime(2026, 1, 2)
+        order = Order(customer, sold_at)
         with self.assertRaises(AttributeError):
             order.total = 150
 
     def test_constructor_ok(self):
         customer = Customer("Raphael", "16149113710")
-        date = datetime(2026, 1, 2)
-        order = Order(customer, date)
+        sold_at = datetime(2026, 1, 2)
+        order = Order(customer, sold_at)
