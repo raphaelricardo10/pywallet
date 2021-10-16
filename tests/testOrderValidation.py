@@ -23,7 +23,7 @@ class TestOrderValidationMethods(unittest.TestCase):
         customer = Customer("Raphael", "16149113710")
         order = Order(customer, "2026-01-02 00:00:00")
 
-    def test_date_validation(self):
+    def test_invalid_date(self):
         customer = Customer("Raphael", "16149113710")
         with self.assertRaises(ValueError):
             Order(customer, "1213123-01-02 00:00:00")

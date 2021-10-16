@@ -7,6 +7,6 @@ class TestProductValidationMethods(unittest.TestCase):
         with self.assertRaises(ValueError):
             Product.validateValue(-10)
             
-    def test_constructor_validation(self):
+    def test_invalid_constructor(self):
         with self.assertRaises(ValueError):
             Product("A", -10)

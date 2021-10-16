@@ -3,10 +3,10 @@ from pywallet.customer import Customer
 
 class TestCustomerValidationMethods(unittest.TestCase):
 
-    def test_document_validation(self):
+    def test_invalid_document(self):
         with self.assertRaises(Customer.InvalidDocumentError):
             Customer.validateDocument("12312312365")
 
-    def test_constructor_validation(self):
+    def test_invalid_constructor(self):
         with self.assertRaises(Customer.InvalidDocumentError):
             Customer("Raphael Ricardo", "12312312365")
