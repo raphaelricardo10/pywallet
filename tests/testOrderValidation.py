@@ -26,3 +26,8 @@ class TestOrderValidationMethods(unittest.TestCase):
         customer = Customer("Raphael", "16149113710")
         sold_at = datetime(2026, 1, 2)
         order = Order(customer, sold_at)
+
+    def test_date_validation(self):
+        customer = Customer("Raphael", "16149113710")
+        with self.assertRaises(ValueError):
+            Order(customer, "1213123-01-02 00:00:00")
