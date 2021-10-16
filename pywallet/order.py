@@ -1,7 +1,11 @@
+from datetime import datetime
 from pywallet.product import Product
+from pywallet.customer import Customer
 
 class Order:
-    def __init__(self) -> None:
+    def __init__(self, customer: Customer, date: datetime) -> None:
+        self.customer = customer
+        self.date = date
         self.items = []
         self._total = 0
 
