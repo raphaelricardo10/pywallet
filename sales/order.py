@@ -18,7 +18,7 @@ class Order:
         if items:
             for item in items:
                 newProduct = Product(item['type'], float(item['value']))
-                self.addItem(newProduct, float(item['qty']))
+                self.addItem(newProduct, int(item['qty']))
 
     @property
     def total(self):
