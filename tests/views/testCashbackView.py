@@ -4,9 +4,9 @@ from json import dumps
 from cashback.orderHTTP import orderHTTP
 
 # Create your tests here.
-class TestCashbackView(unittest.TestCase):
+class TestOrderHTTP(unittest.TestCase):
 
-    def test_order_http(self):
+    def test_create_order_ok(self):
         with open('cashback/testInputs/rightInputs.yaml') as json:
             for obj in load(json):
                 order = orderHTTP(dumps(obj['input']))
