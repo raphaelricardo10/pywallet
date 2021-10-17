@@ -1,7 +1,7 @@
 [
    {
       "input": {
-         "sold_at": "2026-01-02 00:00:00",
+         "sold_at": "2021-01-02 00:00:00",
          "customer": {
             "document": "16149113710",
             "name": "JOSE DA SILVA",
@@ -28,19 +28,24 @@
    },
    {
       "input": {
-         "sold_at": "2026-01-02 00:00:00",
+         "sold_at": "2020-01-02 00:00:00",
          "customer": {
-            "document": "16149113710",
-            "name": "JOSE DA SILVA",
+            "document": "81716916097",
+            "name": "Gildo Martins",
          },
-         "total": "100.00",
+         "total": "150.00",
          "products": [
-            ],
+            {
+               "type": "A",
+               "value": "30.00",
+               "qty": 5,
+            },
+         ],
       },
       "output": {
-         "name":"JOSE DA SILVA",
-         "document": "16149113710",
-         "total": 0.0
+         "name":"Gildo Martins",
+         "document": "81716916097",
+         "total": 150.0
       }
    },
 ]
