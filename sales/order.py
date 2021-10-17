@@ -1,7 +1,7 @@
 from datetime import datetime
-from pywallet.product import Product
-from pywallet.customer import Customer
-from pywallet.cashback import Cashback
+from .product import Product
+from .customer import Customer
+from .cashback import Cashback
 
 class Order:
     def __init__(self, customer: Customer, sold_at: str, cashbackPercent:float =None) -> None:
