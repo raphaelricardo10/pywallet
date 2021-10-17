@@ -1,7 +1,7 @@
 import unittest
 from sales import Customer
 
-class TestCustomerValidationMethods(unittest.TestCase):
+class TestCustomer(unittest.TestCase):
 
     def test_invalid_document(self):
         with self.assertRaises(Customer.InvalidDocumentError):

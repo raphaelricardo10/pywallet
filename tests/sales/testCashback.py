@@ -1,7 +1,7 @@
 import unittest
 from sales import Cashback
 
-class TestCashbackMethods(unittest.TestCase):
+class TestCashback(unittest.TestCase):
     
     def test_cashback_ok(self):
         cashback = Cashback(150, 5)

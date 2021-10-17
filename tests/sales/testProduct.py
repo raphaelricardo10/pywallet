@@ -1,7 +1,7 @@
 import unittest
 from sales import Product
 
-class TestProductValidationMethods(unittest.TestCase):
+class TestProduct(unittest.TestCase):
     
     def test_negative_value(self):
         with self.assertRaises(ValueError):

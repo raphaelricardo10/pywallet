@@ -1,7 +1,7 @@
 import unittest
 from sales import Customer, Order, Product
 
-class TestOrderValidationMethods(unittest.TestCase):
+class TestOrder(unittest.TestCase):
     
     def test_total_order_ok(self):
         customer = Customer("Raphael", "16149113710")
