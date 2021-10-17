@@ -4,7 +4,7 @@ from .customer import Customer
 from .cashback import Cashback
 
 class Order:
-    def __init__(self, customer: Customer, sold_at: str, cashbackPercent:float =None) -> None:
+    def __init__(self,customer: Customer, sold_at: str, cashbackPercent:float =None, items: dict=None) -> None:
         self.customer = customer
         self.sold_at = sold_at
         self.items = []
@@ -14,6 +14,11 @@ class Order:
             self.cashbackInstance = Cashback(self.total, cashbackPercent)
         else:
             self.cashbackInstance = None
+
+        if items:
+            for item in items:
+                newProduct = Product(item['type'], float(item['value']))
+                self.addItem(newProduct, float(item['qty']))
 
     @property
     def total(self):
