@@ -25,6 +25,17 @@ class Customer:
 
         self._document = value
 
+    @property
+    def name(self):
+        return self._name
+
+    @name.setter
+    def name(self, value):
+        if not value:
+            raise ValueError("The customer name cannot be in blank")
+
+        self._name = value
+
     def validateDocument(document: str) -> None:
         #Get all digits from CPF string
         numbers = [int(char) for char in document if char.isdigit()]
