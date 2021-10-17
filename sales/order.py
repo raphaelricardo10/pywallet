@@ -36,6 +36,10 @@ class Order:
     def sold_at(self, value):
         try:
             self._sold_at = datetime.strptime(value, "%Y-%m-%d %H:%M:%S")
+
+            if self._sold_at > datetime.now():
+                raise ValueError("The order date is from future")
+
         except ValueError:
             raise
 
