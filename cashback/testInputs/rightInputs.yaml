@@ -1,0 +1,46 @@
+[
+   {
+      "input": {
+         "sold_at": "2026-01-02 00:00:00",
+         "customer": {
+            "document": "16149113710",
+            "name": "JOSE DA SILVA",
+         },
+         "total": "100.00",
+         "products": [
+            {
+               "type": "A",
+               "value": "10.00",
+               "qty": 1,
+            },
+            {
+               "type": "B",
+               "value": "10.00",
+               "qty": 9,
+            }
+         ],
+      },
+      "output": {
+         "name":"JOSE DA SILVA",
+         "document": "16149113710",
+         "total": 100.0
+      }
+   },
+   {
+      "input": {
+         "sold_at": "2026-01-02 00:00:00",
+         "customer": {
+            "document": "16149113710",
+            "name": "JOSE DA SILVA",
+         },
+         "total": "100.00",
+         "products": [
+            ],
+      },
+      "output": {
+         "name":"JOSE DA SILVA",
+         "document": "16149113710",
+         "total": 0.0
+      }
+   },
+]
