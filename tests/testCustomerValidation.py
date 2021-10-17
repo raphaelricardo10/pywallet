@@ -1,5 +1,5 @@
 import unittest
-from pywallet.customer import Customer
+from sales import Customer
 
 class TestCustomerValidationMethods(unittest.TestCase):
 

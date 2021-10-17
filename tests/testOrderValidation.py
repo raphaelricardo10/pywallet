@@ -1,7 +1,5 @@
 import unittest
-from pywallet.product import Product
-from pywallet.order import Order
-from pywallet.customer import Customer
+from sales import Customer, Order, Product
 
 class TestOrderValidationMethods(unittest.TestCase):
     

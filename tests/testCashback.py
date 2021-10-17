@@ -1,5 +1,5 @@
 import unittest
-from pywallet.cashback import Cashback
+from sales import Cashback
 
 class TestCashbackMethods(unittest.TestCase):
     
