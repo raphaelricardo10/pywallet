@@ -25,6 +25,10 @@ class TestOrderValidationMethods(unittest.TestCase):
         with self.assertRaises(ValueError):
             Order(customer, "1213123-01-02 00:00:00")
 
+    def test_future_date(self):   
+        customer = Customer("Raphael", "16149113710")
+        with self.assertRaises(ValueError):
+            Order(customer, "2026-01-02 00:00:00")        
 
     def test_cashback_change(self):
         customer = Customer("Raphael", "16149113710")
