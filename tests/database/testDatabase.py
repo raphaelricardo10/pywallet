@@ -8,7 +8,7 @@ class TestDatabase(unittest.TestCase):
         self.assertNotEqual(database.connection, None)
 
     def test_connection_error(self):
-        #It is needed to implement a network-blocking method before
+        # It is needed to implement a network-blocking method before
         with self.assertRaises(ConnectionError):
             Database('pywallet')
 

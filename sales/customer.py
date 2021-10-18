@@ -38,13 +38,13 @@ class Customer:
         numberLst = []
         digits = ""
 
-        #Transform all the digits of string in a list for better handling
+        # Transform all the digits of string in a list for better handling
         for char in document:
             if char.isdigit():
                 numberLst.append(int(char))
                 digits += char
 
-        #Check if there are 11 digits
+        # Check if there are 11 digits
         if len(numberLst) != 11:
             raise Customer.InvalidDocumentError
 
@@ -55,7 +55,7 @@ class Customer:
         if numberLst == numberLst[::-1]:
             raise Customer.InvalidDocumentError
 
-        #Validate both document digits
+        # Validate both document digits
         for i in range(9, 11):
             value = sum((numberLst[num] * ((i+1) - num) for num in range(0, i)))
             digit = ((value * 10) % 11) % 10
