@@ -14,3 +14,24 @@ class TestCashback(unittest.TestCase):
     def test_negative_value(self):
         with self.assertRaises(ValueError):
             cashbackTypes.ConstantByTotal(-150, 5)
+
+    def test_variable_percents(self):
+        breakpoints = [
+            # Total: 0 means the minimum cashback.
+            # If it is not defined, the minimum cashback will be zero
+            {
+                'total': 0,
+                'percent': 5
+            },
+            {
+                'total': 500,
+                'percent': 8
+            },
+            {
+                'total': 1500,
+                'percent': 10
+            }
+        ]
+
+        cashback = cashbackTypes.VariableByTotal(breakpoints, 750)
+        self.assertEqual(cashback.value, 60)
