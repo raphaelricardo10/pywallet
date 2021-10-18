@@ -9,7 +9,7 @@ class TestOrderHTTP(unittest.TestCase):
     def test_create_order_ok(self):
         with open('tests/inputs/salesRightInputs.yaml') as json:
             for obj in load(json):
-                order = OrderHTTP(dumps(obj['input']))
+                order = OrderHTTP(dumps(obj['input']), 5)
                 output = obj['output']
                 self.assertEqual(order.customer.name, output['name'])
                 self.assertEqual(order.customer.document, output['document'])

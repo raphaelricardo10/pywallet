@@ -1,4 +1,5 @@
 import unittest
+from cashback import cashbackTypes
 from sales import Customer, Order, Product
 
 class TestOrder(unittest.TestCase):
@@ -32,7 +33,7 @@ class TestOrder(unittest.TestCase):
 
     def test_cashback_change(self):
         customer = Customer("Raphael", "16149113710")
-        order = Order(customer, "2020-01-02 00:00:00", 5)
+        order = Order(customer, "2020-01-02 00:00:00", cashbackTypes.ConstantByTotal(5))
         order.addItem(Product("A", 10), 5)
         self.assertEqual(order.cashback, 2.5)
         print(order.cashback)
