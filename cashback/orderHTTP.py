@@ -3,7 +3,7 @@ from yaml import load
 
 from sales.customer import Customer
 
-class orderHTTP(Order):
+class OrderHTTP(Order):
     def __init__(self, response: str, cashbackPercent=None) -> None:
 
         try:

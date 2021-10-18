@@ -1,7 +1,7 @@
 import unittest
 from yaml import load
 from json import dumps
-from cashback.orderHTTP import orderHTTP
+from cashback.orderHTTP import OrderHTTP
 
 # Create your tests here.
 class TestOrderHTTP(unittest.TestCase):
@@ -9,7 +9,7 @@ class TestOrderHTTP(unittest.TestCase):
     def test_create_order_ok(self):
         with open('tests/inputs/salesRightInputs.yaml') as json:
             for obj in load(json):
-                order = orderHTTP(dumps(obj['input']))
+                order = OrderHTTP(dumps(obj['input']))
                 output = obj['output']
                 self.assertEqual(order.customer.name, output['name'])
                 self.assertEqual(order.customer.document, output['document'])
@@ -19,4 +19,4 @@ class TestOrderHTTP(unittest.TestCase):
         with open('tests/inputs/salesWrongInputs.yaml') as json:
             with self.assertRaises(Exception):
                 for obj in load(json):
-                    order = orderHTTP(dumps(obj['input']))
+                    order = OrderHTTP(dumps(obj['input']))
