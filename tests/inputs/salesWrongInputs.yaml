@@ -1,0 +1,101 @@
+[
+   {
+      "sold_at": "2021-01-02 00:00:00",
+      "customer": {
+         "document": "16149113710",
+         "name": "JOSE DA SILVA",
+      },
+      "total": "0.0",
+      "products": []
+   },
+   {
+      "sold_at": "2021-01-02 00:00:00",
+      "customer": {
+         "document": "16149113710",
+         "name": "JOSE DA SILVA",
+      },
+      "total": "100.0",
+      "products": [
+         {
+            "type": "A",
+            "price": "30",
+            "qty": 3,
+         }
+      ]
+   },
+   {
+      "sold_at": "2021-01-02 00:00:00",
+      "customer": {
+         "document": "",
+         "name": "JOSE DA SILVA",
+      },
+      "total": "90.0",
+      "products": [
+         {
+            "type": "A",
+            "price": "30",
+            "qty": 3,
+         }
+      ]
+   },
+   {
+      "sold_at": "",
+      "customer": {
+         "document": "16149113710",
+         "name": "JOSE DA SILVA",
+      },
+      "total": "90.0",
+      "products": [
+         {
+            "type": "A",
+            "price": "30",
+            "qty": 3,
+         }
+      ]
+   },
+   {
+      "sold_at": "2021-01-02 00:00:00",
+      "customer": {
+         "document": "16149113710",
+         "name": "",
+      },
+      "total": "90.0",
+      "products": [
+         {
+            "type": "A",
+            "price": "30",
+            "qty": 3,
+         }
+      ]
+   },
+   {
+      "sold_at": "2026-01-02 00:00:00",
+      "customer": {
+         "document": "16149113710",
+         "name": "JOSE DA SILVA",
+      },
+      "total": "90.0",
+      "products": [
+         {
+            "type": "A",
+            "price": "30",
+            "qty": 3,
+         }
+      ]
+   },
+   {
+      "sold_at": "202123131-01-02 00:00:00",
+      "customer": {
+         "document": "16149113710",
+         "name": "JOSE DA SILVA",
+      },
+      "total": "90.0",
+      "products": [
+         {
+            "type": "A",
+            "price": "30",
+            "qty": 3,
+         }
+      ]
+   },
+]

@@ -14,3 +14,9 @@ class TestOrderHTTP(unittest.TestCase):
                 self.assertEqual(order.customer.name, output['name'])
                 self.assertEqual(order.customer.document, output['document'])
                 self.assertEqual(order.total, output['total'])
+
+    def test_wrong_inputs(self):
+        with open('tests/inputs/salesWrongInputs.yaml') as json:
+            with self.assertRaises(Exception):
+                for obj in load(json):
+                    order = orderHTTP(dumps(obj['input']))
