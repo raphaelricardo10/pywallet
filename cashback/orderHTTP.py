@@ -1,3 +1,4 @@
+from cashback import cashbackTypes
 from sales import Order
 from yaml import load
 
@@ -13,7 +14,7 @@ class OrderHTTP(Order):
             if not obj['products']:
                 raise ValueError("A least one product is required to complete the order")
 
-            super().__init__(customer, obj['sold_at'], items=obj['products'], cashbackPercent=cashbackPercent)
+            super().__init__(customer, obj['sold_at'], cashbackTypes.ConstantByTotal(cashbackPercent), obj['products'])
 
             if float(obj['total']) != self.total:
                 raise ValueError("The order total is different of the sum of products")

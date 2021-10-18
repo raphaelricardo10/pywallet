@@ -1,7 +1,12 @@
-class Cashback:
-    def __init__(self, total: float, percent: float) -> None:
-        self._percent = percent
-        self.total = total
+from abc import ABCMeta, abstractmethod
+
+class Cashback(metaclass=ABCMeta):
+    def __init__(self, total: float=None, percent: float=None) -> None:
+            self._percent = percent
+            self._total = total
+
+            if total and percent and True:
+                self.value = self.calculateCashback()
 
     @property
     def percent(self):
@@ -13,7 +18,7 @@ class Cashback:
             raise ValueError("The percent cannot be less than zero")
             
         self._percent = value
-        self.value = Cashback.calculateCashback(self.total, self.percent)
+        self.value = self.calculateCashback()
 
     @property
     def total(self):
@@ -25,13 +30,8 @@ class Cashback:
             raise ValueError("The total cannot be less than zero")
         
         self._total = value
-        self.value = Cashback.calculateCashback(self.total, self.percent)
+        self.value = self.calculateCashback()
 
-    def calculateCashback(total: float, percent: float) -> float:
-        if total < 0:
-            raise ValueError("The value cannot be less than zero")
-
-        if percent < 0:
-            raise ValueError("Percent value cannot be less than zero")
-
-        return total*percent/float(100)
+    @abstractmethod
+    def calculateCashback(self):
+        pass
